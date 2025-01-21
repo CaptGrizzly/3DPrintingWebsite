@@ -45,12 +45,13 @@ header img {
 /* Hamburger Menu Button */
 .hamburger-menu {
     display: none;
-    background-color: #333;
+    background-color: #191919;
     color: white;
     border: none;
     font-size: 24px;
     padding: 10px 15px;
     cursor: pointer;
+    animation: normal 0.2s;
 }
 
 .AboutSection {
@@ -82,7 +83,7 @@ header img {
     .NavBarRow {
         display: none; /* Hide full nav bar */
         flex-direction: column;
-        background-color: #333;
+        background-color: #191919;
     }
 
     .NavBarColumn {
@@ -118,9 +119,4 @@ p {
     margin: 20px 0;
     color: #fff;
     font-size: 1vw;
-}
-
-p.legalText {
-    color: #fff;
-    font-size: 0.7vw;
 }
