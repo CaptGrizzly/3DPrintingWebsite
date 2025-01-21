@@ -39,7 +39,7 @@ header img {
 }
 
 .NavBarColumn a:hover {
-    background-color: #575757;
+    background-color: navy;
 }
 
 /* Hamburger Menu Button */
@@ -104,19 +104,19 @@ h1 {
     text-align: center;
     margin: 20px 0;
     color: #fff;
-    font-size: 2vw;
+    font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 h5 {
     text-align: center;
     margin: 20px 0;
     color: #fff;
-    font-size: 3vw;
+    font-size: clamp(2rem, 3vw, 4rem);
 }
 
 p {
     text-align: center;
     margin: 20px 0;
     color: #fff;
-    font-size: 1vw;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
