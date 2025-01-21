@@ -6,14 +6,22 @@
     <title>Capt Grizzly Printing</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    body {
+      background-image: url('img/WebsiteBackground.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    </style>
 <body>
     <!-- Main Logo -->
-    <header style="text-align: center; margin: 20px 0;">
-        <img src="img/3dprintwebsitebanner.png" alt="Capt Grizzly Printing Logo" style="max-width: 200px; height: auto;">
+    <header style="text-align: center; margin-top: 55px;">
+        <img src="img/3dprintwebsitebanner.png" alt="Capt Grizzly Printing Logo" style="width: fit-content; height: fit-content;">
     </header>
 
-    <!-- Navigation (sit on top) -->
+    <!-- Navigation -->
     <div class="NavBarTop">
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
         <div class="NavBarRow">
             <div class="NavBarColumn">
                 <a href="#" class="">HOME</a>

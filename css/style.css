@@ -1,4 +1,4 @@
-/* General Reset */
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Navigation Bar Styling */
+/* Navigation Bar */
 .NavBarTop {
     position: fixed;
     top: 0;
@@ -23,11 +23,6 @@ body, html {
     padding: 10px 0;
 }
 
-.NavBarColumn {
-    flex: 1;
-    text-align: center;
-}
-
 .NavBarColumn a {
     display: block;
     text-decoration: none;
@@ -39,33 +34,49 @@ body, html {
 
 .NavBarColumn a:hover {
     background-color: #575757;
-    color: #fff;
 }
 
-/* Flexible Image */
-header img {
-    max-width: 100%;
-    height: auto;
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
-/* Responsive Design */
+/* Mobile Styles */
 @media (max-width: 600px) {
     .NavBarRow {
+        display: none; /* Hide full nav bar */
         flex-direction: column;
+        background-color: #333;
     }
 
     .NavBarColumn {
-        flex: none;
-        width: 100%;
+        text-align: center;
     }
 
-    .NavBarColumn a {
-        font-size: 1.2em;
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .NavBarRow.show {
+        display: flex; /* Show nav bar when menu is toggled */
     }
 }
 
-@media (min-width: 601px) and (max-width: 992px) {
-    .NavBarColumn a {
-        font-size: 1.1em;
-    }
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
 }
