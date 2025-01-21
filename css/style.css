@@ -5,6 +5,12 @@ body, html {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+header img {
+    width: 100%; /* Makes the logo cover the entire width of its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes any inline spacing around the image */
+    margin: 0 auto; /* Centers the logo */
+}
 
 /* Navigation Bar */
 .NavBarTop {
