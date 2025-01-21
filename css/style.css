@@ -53,6 +53,30 @@ header img {
     cursor: pointer;
 }
 
+.AboutSection {
+    display: flex;               /* Enable flexbox for centering */
+    justify-content: center;     /* Horizontally center */
+    align-items: center;         /* Vertically center (if applicable) */
+    text-align: center;          /* Center text content */
+    padding: 20px;               /* Add padding for spacing */
+    min-height: 100vh;           /* Ensure full-screen height if vertically centering */
+}
+
+.SectionContent {
+    max-width: 700px;            /* Restrict content width */
+    width: 100%;                 /* Allow responsive resizing */
+    margin: 0 auto;              /* Center horizontally with margins */
+    text-align: left;            /* Optional: Override if you want left alignment */
+}
+
+.AboutImage {
+    width: 100%;                 /* Make the image responsive */
+    max-width: 1000px;           /* Restrict maximum image width */
+    margin: 20px auto;           /* Add space around the image */
+    display: block;              /* Ensure it's centered in its container */
+}
+
+
 /* Mobile Styles */
 @media (max-width: 600px) {
     .NavBarRow {
@@ -79,16 +103,24 @@ h1 {
     text-align: center;
     margin: 20px 0;
     color: #fff;
+    font-size: 2vw;
 }
 
 h5 {
     text-align: center;
     margin: 20px 0;
     color: #fff;
+    font-size: 3vw;
 }
 
 p {
     text-align: center;
     margin: 20px 0;
     color: #fff;
+    font-size: 1vw;
+}
+
+p.legalText {
+    color: #fff;
+    font-size: 0.7vw;
 }
