@@ -10,8 +10,10 @@ header img {
     height: auto; /* Maintains aspect ratio */
     display: block; /* Removes any inline spacing around the image */
     margin: 0 auto; /* Centers the logo */
+    background-color: #191919;
 }
 
+/* Home Page Styles */
 /* Navigation Bar */
 .NavBarTop {
     position: fixed;
@@ -42,7 +44,6 @@ header img {
     background-color: navy;
 }
 
-/* Hamburger Menu Button */
 .hamburger-menu {
     display: none;
     background-color: #191919;
@@ -77,6 +78,49 @@ header img {
     display: block;              /* Ensure it's centered in its container */
 }
 
+/* Order Page Styles */
+
+body {
+    background-image: url('img/WebsiteBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Back Button Container */
+.OrderBackButtonCol {
+    position: absolute; /* Position it at the top-left */
+    top: 20px;
+    left: 20px;
+}
+
+/* Back Button Styling */
+.OrderBackButton {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #333; /* Match the navigation bar */
+    padding: clamp(10px, 1vw, 20px) clamp(15px, 2vw, 30px); /* Responsive padding */
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Responsive font size */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.OrderBackButton:hover {
+    background-color: hsl(0, 100%, 28%); /* Hover effect for consistency */
+    color: #fff;
+}
+
+/* Header Container */
+.OrderHeaderCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    text-align: center;
+}
 
 /* Mobile Styles */
 @media (max-width: 600px) {
