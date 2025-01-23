@@ -5,27 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place an Order</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/orderStyle.css">
+    <script src="scripting/javascript/orderScript.js"></script>
 </head>
 <body>
- 
+    <!-- Background Image -->
     <style>
         body {
           background-image: url('img/WebsiteBackground.jpg');
           background-size: cover;
-          background-repeat: no-repeat;
+          background-repeat: repeat-y;
         }
     </style>
 
-    <header>
-        <header class="OrderHeader">
-            <div class="OrderHeaderRow">
-                <a href="index.html" class="OrderBackButton">&#8592; CANCEL AND RETURN HOME</a>
-                <h1 class="OrderHeaderTitle">Place an Order</h1>
-            </div>
-        </header>
-    </header>  
+    <!-- Header -->
+    <header class="Header">
+        <div class="HeaderRow">
+            <a href="index.html" class="BackButton">
+                <span class="desktop-text">&#8592; CANCEL AND RETURN HOME</span>
+                <span class="mobile-text">CANCEL</span>
+            </a>
+            <h1 class="HeaderTitle">Place an Order</h1>
+        </div>
+    </header> 
 
+    <!-- Main Content -->
+    <div class="MainContent">
+        <!-- Left Image -->
+        <div class="OrderImageContainer">
+            <img src="img/PrinterPic1.jpg" alt="OrderIllustration">
+        </div>
+        <!-- Right Forms and Buttons -->
+        <div class="OrderFormContainer">
+            <div class="OrderOption" id="orderOptions">
+                <h2>How would you like to proceed?</h2>
+                <div class="OrderOptionButtons">
+                    <button id="chooseWebsite" onclick="showWebsiteForm(); showForm('website')">Choose via Website</button>
+                    <button id="uploadFile" onclick="showUploadForm(); showForm('file')">Upload Your Own File</button>
+                </div>
+            </div>
+        
+            <!-- Website Form -->
+            <div class="OrderForm" id="websiteForm">
+                <h2>Website Order Form</h2>
+                <form action="scripting/php/" method="POST">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+        
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+        
+                    <label for="websiteLink">Website Link:</label><br>
+                    <input type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
+        
+                    <label>Filament Color:</label><br>
+                    <input type="radio" id="colorBlack" name="color" value="Black">
+                    <label for="colorBlack">Black</label><br>
+                    <input type="radio" id="colorGray" name="color" value="Gray">
+                    <label for="colorGray">Gray</label><br><br>
+                    <input type="radio" id="colorWhite" name="color" value="White">
+                    <label for="colorWhite">White</label><br><br>
+                    <input type="radio" id="colorBlue" name="color" value="Blue">
+                    <label for="colorBlue">Blue</label><br><br>
+        
+                    <label for="notes">Special Notes:</label><br>
+                    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+        
+                    <button type="submit">Submit Website Order</button>
+                </form>
+            </div>
+        
+            <!-- File Upload Form -->
+            <div class="OrderForm" id="fileForm">
+                <h2>File Upload Form</h2>
+                <form action="scripting/php/" method="POST" enctype="multipart/form-data">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+        
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+        
+                    <label for="fileUpload">Upload STL File:</label><br>
+                    <input type="file" id="fileUpload" name="fileUpload" accept=".stl" required><br><br>
+        
+                    <label>Filament Color:</label><br>
+                    <input type="radio" id="colorBlack" name="color" value="Black">
+                    <label for="colorBlack">Black</label><br>
+                    <input type="radio" id="colorGray" name="color" value="Gray">
+                    <label for="colorGray">Gray</label><br><br>
+                    <input type="radio" id="colorWhite" name="color" value="White">
+                    <label for="colorWhite">White</label><br><br>
+                    <input type="radio" id="colorBlue" name="color" value="Blue">
+                    <label for="colorBlue">Blue</label><br><br>
+        
+                    <label for="notes">Special Notes:</label><br>
+                    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+        
+                    <button type="submit">Submit File Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
