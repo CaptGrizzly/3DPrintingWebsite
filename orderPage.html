@@ -52,13 +52,15 @@
                     <legend>Website Order Form</Form></legend>
 
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br><br>
+                    <input placeholder="First and Last Name" type="text" id="name" name="name" required><br><br>
         
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <input placeholder="example@gmail.com" type="email" id="email" name="email" required><br><br>
         
+                    <button id="MakerWorldButton" onclick="window.open('https://makerworld.com/en', '_blank')">Browse MakerWorld.com</button><br><br>
+
                     <label for="websiteLink">Website Link:</label><br>
-                    <input type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
+                    <input placeholder="https://makerworld.com/en" type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
         
                     <label>Filament Color:</label><br>
                     <input checked type="radio" id="colorGray" name="color" value="Gray">
@@ -71,7 +73,7 @@
                     <label for="colorBlue">Blue</label><br><br>
         
                     <label for="notes">Special Notes:</label><br>
-                    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+                    <textarea placeholder="Please write any specific requests or comments" id="notes" name="notes" rows="3"></textarea><br><br>
         
                     <button type="submit">Submit Website Order</button>
                 </fieldset>
