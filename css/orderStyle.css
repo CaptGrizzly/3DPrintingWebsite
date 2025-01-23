@@ -232,23 +232,21 @@ textarea {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .NavBarRow {
-        display: none; /* Hide full nav bar */
-        flex-direction: column;
-        background-color: #191919;
+    .MainContent {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+    .OrderImageContainer img {
+        max-width: 80vw; /* Adjust image size */
+    }
+    .OrderFormContainer {
+        max-width: 80vw; /* Adjust form size */
+    }
+    .BackButtonCol {
+        position: static; /* Remove absolute positioning */
+        margin-bottom: 20px; /* Add space between button and title */
     }
 
-    .NavBarColumn {
-        text-align: center;
-    }
-
-    .hamburger-menu {
-        display: block; /* Show hamburger menu */
-    }
-
-    .NavBarRow.show {
-        display: flex; /* Show nav bar when menu is toggled */
-    }
     .desktop-text {
         display: none;
     }
