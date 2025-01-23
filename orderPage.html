@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="css/orderStyle.css">
     <script src="scripting/javascript/orderScript.js"></script>
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        document.body.classList.add("mobile");
+    }
+});
+</script>
+
 <body>
     <!-- Background Image -->
     <style>
