@@ -40,15 +40,17 @@
             <div class="OrderOption" id="orderOptions">
                 <h2>How would you like to proceed?</h2>
                 <div class="OrderOptionButtons">
-                    <button id="chooseWebsite" onclick="showWebsiteForm()">Choose via Website</button>
-                    <button id="uploadFile" onclick="showUploadForm()">Upload Your Own File</button>
+                    <button id="chooseWebsite" onclick="">Choose via Website</button>
+                    <button id="uploadFile" onclick="">Upload Your Own File</button>
                 </div>
             </div>
         
             <!-- Website Form -->
             <div class="OrderForm" id="websiteForm">
-                <h2>Website Order Form</h2>
                 <form action="scripting/php/" method="POST">
+                    <fieldset>
+                    <legend>Website Order Form</Form></legend>
+
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name" required><br><br>
         
@@ -59,10 +61,10 @@
                     <input type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
         
                     <label>Filament Color:</label><br>
-                    <input type="radio" id="colorBlack" name="color" value="Black">
-                    <label for="colorBlack">Black</label><br>
-                    <input type="radio" id="colorGray" name="color" value="Gray">
+                    <input checked type="radio" id="colorGray" name="color" value="Gray">
                     <label for="colorGray">Gray</label><br><br>
+                    <input type="radio" id="colorBlack" name="color" value="Black">
+                    <label for="colorBlack">Black</label><br><br>
                     <input type="radio" id="colorWhite" name="color" value="White">
                     <label for="colorWhite">White</label><br><br>
                     <input type="radio" id="colorBlue" name="color" value="Blue">
@@ -72,13 +74,16 @@
                     <textarea id="notes" name="notes" rows="3"></textarea><br><br>
         
                     <button type="submit">Submit Website Order</button>
+                </fieldset>
                 </form>
             </div>
         
             <!-- File Upload Form -->
             <div class="OrderForm" id="fileForm">
-                <h2>File Upload Form</h2>
                 <form action="scripting/php/" method="POST" enctype="multipart/form-data">
+                    <fieldset>
+                    <legend>File Order Form</Form></legend>
+                    
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name" required><br><br>
         
@@ -89,10 +94,10 @@
                     <input type="file" id="fileUpload" name="fileUpload" accept=".stl" required><br><br>
         
                     <label>Filament Color:</label><br>
-                    <input type="radio" id="colorBlack" name="color" value="Black">
-                    <label for="colorBlack">Black</label><br>
-                    <input type="radio" id="colorGray" name="color" value="Gray">
+                    <input checked type="radio" id="colorGray" name="color" value="Gray">
                     <label for="colorGray">Gray</label><br><br>
+                    <input type="radio" id="colorBlack" name="color" value="Black">
+                    <label for="colorBlack">Black</label><br><br>
                     <input type="radio" id="colorWhite" name="color" value="White">
                     <label for="colorWhite">White</label><br><br>
                     <input type="radio" id="colorBlue" name="color" value="Blue">
@@ -102,6 +107,7 @@
                     <textarea id="notes" name="notes" rows="3"></textarea><br><br>
         
                     <button type="submit">Submit File Order</button>
+                </fieldset>
                 </form>
             </div>
         </div>

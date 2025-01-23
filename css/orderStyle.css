@@ -76,16 +76,15 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-evenly;
     margin: 20px;
 }
 
 /* Order Image Container */
 .OrderImageContainer {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .OrderImageContainer img{
@@ -98,6 +97,7 @@ body {
 /* Order Form Container */
 .OrderFormContainer {
     display: flex;
+    flex: 2;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -107,6 +107,103 @@ body {
     max-width: 50vw;
 }
 
+fieldset {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%; /* Ensure the fieldset stretches fully */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+legend {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.OrderForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* Make the form take full width of the container */
+    max-width: 100%; /* Remove the width restriction */
+    margin: 0 auto;
+    color: #fff;
+}
+
+input {
+    width: clamp(100px, 50%, 100%);
+    padding: .5em;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+textarea {
+    width: clamp(100px, 50%, 100%);
+    padding: .5em;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+/* Base styles for all radio buttons */
+input[type="radio"] {
+    appearance: none; /* Remove default styling */
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    border: 2px solid #333; /* Add border */
+    border-radius: 50%; /* Make it round */
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px; /* Space between button and label */
+    vertical-align: middle; /* Align with label text */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Label alignment */
+label {
+    display: inline-flex; /* Allows flex properties for alignment */
+    align-items: center; /* Vertically centers the label text */
+    font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 10px; /* Add spacing between rows */
+}
+
+/* Individual colors for radio buttons when not selected */
+#colorGray {
+    background-color: gray;
+}
+#colorBlack {
+    background-color: black;
+}
+#colorWhite {
+    background-color: white;
+    border-color: #ccc; /* Adjust border for visibility */
+}
+#colorBlue {
+    background-color: blue;
+}
+
+/* Individual colors for radio buttons when selected */
+input[type="radio"]:checked#colorGray {
+    background-color: gray;
+    border-color: gray;
+    border-width: 20px;}
+input[type="radio"]:checked#colorBlack {
+    background-color: black;
+    border-color: black;
+    border-width: 20px;}
+input[type="radio"]:checked#colorWhite {
+    background-color: white;
+    border-color: #fff;
+    border-width: 20px;
+}
+input[type="radio"]:checked#colorBlue {
+    background-color: blue;
+    border-color: blue;
+    border-width: 20px;}
 
 
 
@@ -148,6 +245,13 @@ body {
 
 /* Text Styles */
 h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+h2 {
     text-align: center;
     margin: 20px 0;
     color: #fff;
