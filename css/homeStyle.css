@@ -83,6 +83,73 @@ body, html {
     margin: 20px auto;           /* Add space around the image */
     display: block;              /* Ensure it's centered in its container */
 }
+
+/* Pricing Section Styles */
+.PricingSection {
+    background-color: #191919; /* Match the dark background */
+    padding: 40px 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Smooth rounded corners */
+    color: white; /* White text for readability */
+    text-align: center; /* Center-align all content */
+    margin: 20px auto; /* Add spacing and center the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.PricingSection h5 {
+    font-size: 2.5rem; /* Larger font for emphasis */
+    font-weight: bold; /* Bold for a strong title */
+    margin-bottom: 20px; /* Add space below the title */
+    color: #fff; /* Accent color for title */
+    text-transform: uppercase; /* Make it stand out */
+}
+
+.PricingSection p {
+    font-size: 1.2rem; /* Match the general text size */
+    line-height: 1.8; /* Improve text spacing */
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+.PricingSection ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 20px auto; /* Center the list */
+    max-width: 600px; /* Restrict width for better readability */
+}
+
+.PricingSection ul li {
+    font-size: 1.2rem; /* Match text size */
+    margin: 10px 0; /* Space between items */
+    padding: 10px 15px; /* Add padding inside items */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* White text */
+}
+
+.PricingSection ul li strong {
+    color: navy; /* Highlight key details */
+}
+
+/* Button for Call-to-Action (Optional) */
+.PricingSection .cta-button {
+    display: inline-block;
+    background-color: navy; /* Accent button color */
+    color: white; /* Text color */
+    padding: 15px 30px; /* Add padding for a larger button */
+    font-size: 1.2rem; /* Slightly larger text */
+    text-align: center; /* Center-align text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    margin-top: 20px; /* Add spacing above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+}
+
+.PricingSection .cta-button:hover {
+    background-color: #003f8a; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
 .desktop-text {
     display: inline;
 }

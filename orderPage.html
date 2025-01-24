@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="desktop-text">&#8592; CANCEL AND RETURN HOME</span>
                 <span class="mobile-text">CANCEL</span>
             </a>
-            <h1 class="HeaderTitle">Place an Order</h1>
+            <h1 class="HeaderTitle">Capt Grizzly Printing</h1>
         </div>
     </header> 
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <!-- Right Forms and Buttons -->
         <div class="OrderFormContainer"> 
-                <form id="websiteOrderForm">
+                <form id="websiteOrderForm" action="/orderSubmitted.html" method="POST">
                     <fieldset>
                     <legend>Place Your Order</Form></legend>
 
@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input placeholder="example@gmail.com" type="email" id="email" name="email" required><br><br>
         
                     <p>Browse makerworld.com or paste the link to a makerworld.com 3D File below</p>
-                    <button id="MakerWorldButton" onclick="window.open('https://makerworld.com/en', '_blank')">Browse MakerWorld.com</button><br><br>
+                    <button id="MakerWorldButton" onclick="window.open('https://makerworld.com/en/3d-models?devModelNames=N1&isPrintable=true', '_blank')">Browse makerworld.com</button><br><br>
 
-                    <label for="websiteLink">Website Link:</label><br>
-                    <input placeholder="https://makerworld.com/en" type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
+                    <label for="websiteLink">Makerworld Link:</label><br>
+                    <input placeholder="https://makerworld.com/en/models/..." type="url" id="websiteLink" name="websiteLink" accept="https://makerworld.com/" required><br><br>
         
                     <label>Filament Color:</label><br>
                     <input checked type="radio" id="colorGray" name="color" value="Gray">
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label for="notes">Special Notes:</label><br>
                     <textarea placeholder="Please write any specific requests or comments" id="notes" name="notes" rows="3"></textarea><br><br>
         
-                    <button type="submit">Submit Website Order</button>
+                    <button type="submit">Submit Order</button>
                 </fieldset>
                 </form>
         </div>
@@ -125,6 +125,7 @@ if (websiteForm) {
             console.log("Document written with ID:", docRef.id);
             alert('Website order submitted successfully!');
             websiteForm.reset();
+            window.location.href = 'orderSubmitted.html';
         } catch (error) {
             console.error('Error submitting website order:', error);
             alert('An error occurred. Please try again.');
