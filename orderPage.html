@@ -6,7 +6,6 @@
     <title>Place an Order</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/orderStyle.css">
-    <script src="scripting/javascript/orderScript.js"></script>
 </head>
 
 <script>
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<body>
+<body>   
     <!-- Background Image -->
     <style>
         body {
@@ -44,23 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="MainContent">
         <!-- Left Image -->
         <div class="OrderImageContainer">
-            <img src="img/PrinterPic1.jpg" alt="OrderIllustration">
+            <img src="img/WebsiteTutorial.gif" alt="OrderIllustration">
         </div>
         <!-- Right Forms and Buttons -->
-        <div class="OrderFormContainer">
-            <div class="OrderOption" id="orderOptions">
-                <h2>How would you like to proceed?</h2>
-                <div class="OrderOptionButtons">
-                    <button id="chooseWebsite" onclick="">Choose via Website</button>
-                    <button id="uploadFile" onclick="">Upload Your Own File</button>
-                </div>
-            </div>
-        
+        <div class="OrderFormContainer"> 
             <!-- Website Form -->
             <div class="OrderForm" id="websiteForm">
-                <form action="scripting/php/" method="POST">
+                <form id="websiteOrderForm">
                     <fieldset>
-                    <legend>Website Order Form</Form></legend>
+                    <legend>Place Your Order</Form></legend>
 
                     <label for="name">Name:</label><br>
                     <input placeholder="First and Last Name" type="text" id="name" name="name" required><br><br>
@@ -90,40 +81,62 @@ document.addEventListener("DOMContentLoaded", () => {
                 </fieldset>
                 </form>
             </div>
-        
-            <!-- File Upload Form -->
-            <div class="OrderForm" id="fileForm">
-                <form action="scripting/php/" method="POST" enctype="multipart/form-data">
-                    <fieldset>
-                    <legend>File Order Form</Form></legend>
-                    
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br><br>
-        
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-        
-                    <label for="fileUpload">Upload STL File:</label><br>
-                    <input type="file" id="fileUpload" name="fileUpload" accept=".stl" required><br><br>
-        
-                    <label>Filament Color:</label><br>
-                    <input checked type="radio" id="colorGray" name="color" value="Gray">
-                    <label for="colorGray">Gray</label><br><br>
-                    <input type="radio" id="colorBlack" name="color" value="Black">
-                    <label for="colorBlack">Black</label><br><br>
-                    <input type="radio" id="colorWhite" name="color" value="White">
-                    <label for="colorWhite">White</label><br><br>
-                    <input type="radio" id="colorBlue" name="color" value="Blue">
-                    <label for="colorBlue">Blue</label><br><br>
-        
-                    <label for="notes">Special Notes:</label><br>
-                    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
-        
-                    <button type="submit">Submit File Order</button>
-                </fieldset>
-                </form>
-            </div>
         </div>
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDhyI4uoZaJri8BDHmqLLAJb8HoH67TrPA",
+          authDomain: "capt-grizzly-printing.firebaseapp.com",
+          databaseURL: "https://capt-grizzly-printing-default-rtdb.firebaseio.com",
+          projectId: "capt-grizzly-printing",
+          storageBucket: "capt-grizzly-printing.firebasestorage.app",
+          messagingSenderId: "363408723474",
+          appId: "1:363408723474:web:d002eb944dff7ea6ad92cb",
+          measurementId: "G-5QBL1V39YT"
+        };
+      
+        // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Handle Website Order Form Submission
+const websiteForm = document.getElementById('websiteOrderForm');
+if (websiteForm) {
+    console.log("Form found and event listener attached.");
+    websiteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            websiteLink: e.target.websiteLink.value,
+            color: e.target.color.value,
+            notes: e.target.notes.value,
+            timestamp: new Date().toISOString()
+        };
+
+        try {
+            const docRef = await addDoc(collection(db, 'websiteOrders'), formData);
+            console.log("Document written with ID:", docRef.id);
+            alert('Website order submitted successfully!');
+            websiteForm.reset();
+        } catch (error) {
+            console.error('Error submitting website order:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+} else {
+    console.error("Form #websiteOrderForm not found!");
+}
+      </script>
+    <script src="./scripting/javascript/orderScript.js"></script>
 </body>
 </html>

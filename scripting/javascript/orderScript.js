@@ -1,32 +1,4 @@
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-    // Get references to the forms and buttons
-    const websiteForm = document.getElementById("websiteForm");
-    const fileForm = document.getElementById("fileForm");
-    const chooseWebsiteButton = document.getElementById("chooseWebsite");
-    const uploadFileButton = document.getElementById("uploadFile");
-    const orderImage = document.querySelector(".OrderImageContainer img");
-
-    // Initially hide both forms
-    websiteForm.style.display = "none";
-    fileForm.style.display = "none";
-
-    // Event listener for "Choose via Website" button
-    chooseWebsiteButton.addEventListener("click", () => {
-        websiteForm.style.display = "block";
-        fileForm.style.display = "none";
-        orderImage.src = "img/WebsiteTutorial.gif"; // Replace with GIF file
-        orderImage.alt = "Website Order Illustration";
-    });
-
-    // Event listener for "Upload Your Own File" button
-    uploadFileButton.addEventListener("click", () => {
-        fileForm.style.display = "block"; // Show file form
-        websiteForm.style.display = "none"; // Hide website form
-        orderImage.src = "img/UploadFilePic.jpg"; // Replace image with file-upload-specific picture
-        orderImage.alt = "File Upload Illustration"; // Update alt text
-    });
-});
+console.log("orderScript.js loaded.");
 document.addEventListener("DOMContentLoaded", () => {
     // Get all radio buttons and their labels
     const radioButtons = document.querySelectorAll('input[type="radio"]');
