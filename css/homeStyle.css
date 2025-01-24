@@ -107,6 +107,7 @@ body, html {
     font-size: 1.2rem; /* Match the general text size */
     line-height: 1.8; /* Improve text spacing */
     margin-bottom: 20px; /* Space between paragraphs */
+    color: #fff;
 }
 
 .PricingSection ul {
@@ -114,6 +115,7 @@ body, html {
     padding: 0; /* Remove padding */
     margin: 20px auto; /* Center the list */
     max-width: 600px; /* Restrict width for better readability */
+    color: #fff;
 }
 
 .PricingSection ul li {
