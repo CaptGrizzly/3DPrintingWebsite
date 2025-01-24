@@ -97,21 +97,19 @@ body {
 /* Order Form Container */
 .OrderFormContainer {
     display: flex;
-    flex: 2;
+    flex: 1; /* Ensure the form container takes its proportional share */
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* Stretch to fill container width */
     justify-content: center;
     padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 50vw;
+    color: #fff;
 }
 
 fieldset {
     border: 2px solid #fff;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 0;
+    margin: 0;
     width: 100%; /* Ensure the fieldset stretches fully */
     box-sizing: border-box; /* Include padding in width */
 }

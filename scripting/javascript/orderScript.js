@@ -1,4 +1,3 @@
-console.log("orderScript.js loaded.");
 document.addEventListener("DOMContentLoaded", () => {
     // Get all radio buttons and their labels
     const radioButtons = document.querySelectorAll('input[type="radio"]');

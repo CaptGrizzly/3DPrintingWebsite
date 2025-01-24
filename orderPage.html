@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <!-- Right Forms and Buttons -->
         <div class="OrderFormContainer"> 
-            <!-- Website Form -->
-            <div class="OrderForm" id="websiteForm">
                 <form id="websiteOrderForm">
                     <fieldset>
                     <legend>Place Your Order</Form></legend>
@@ -59,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label for="email">Email:</label><br>
                     <input placeholder="example@gmail.com" type="email" id="email" name="email" required><br><br>
         
+                    <p>Browse makerworld.com or paste the link to a makerworld.com 3D File below</p>
                     <button id="MakerWorldButton" onclick="window.open('https://makerworld.com/en', '_blank')">Browse MakerWorld.com</button><br><br>
 
                     <label for="websiteLink">Website Link:</label><br>
@@ -80,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button type="submit">Submit Website Order</button>
                 </fieldset>
                 </form>
-            </div>
         </div>
     </div>
     <script type="module">
@@ -110,7 +108,6 @@ const db = getFirestore(app);
 // Handle Website Order Form Submission
 const websiteForm = document.getElementById('websiteOrderForm');
 if (websiteForm) {
-    console.log("Form found and event listener attached.");
     websiteForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
