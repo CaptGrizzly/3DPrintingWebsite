@@ -203,8 +203,7 @@ input[type="radio"]:checked#colorBlack {
 input[type="radio"]:checked#colorWhite {
     background-color: white;
     border-color: #fff;
-    border-width: 20px;
-}
+    border-width: 20px;}
 input[type="radio"]:checked#colorBlue {
     background-color: blue;
     border-color: blue;

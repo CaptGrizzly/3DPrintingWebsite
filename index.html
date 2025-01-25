@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/homeStyle.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="scripting/javascript/homeScript.js"></script>
+    <script src="scripting/javascript/priceCalculator.js"></script>
 </head>
 
 <style>
@@ -58,8 +59,7 @@
         <p style="font-size: .8vw;">Software Expert and Owner: Bryson Bayer</p>
     </div>
       <img src="img/PrinterPic1.jpg" style="width:100%;max-width:1000px" class="AboutImage">
-      <p><strong>Operating hours:</strong> everyday from 9:00 am to 5:00 pm.</p>
-      <p><strong>Location:</strong> Placentia, CA</p>
+      <p><strong>Location:</strong> Placentia, CA 92870</p>
     </div>
   </div>
 
@@ -68,27 +68,46 @@
     <div class="SectionContent" style="max-width:1000px">
         <h5 class="PricingContent1"><span class="PricingTitle">PRICING</span></h5>
         <p>
-            Our pricing is based on the size of the object you want printed. The larger the object, the more material is used, and the longer it takes to print. 
-            The price is also based on the quality of the print. The higher the quality, the more time and detail is put into the print. All order requests will be assumed default print settings unless requested for higher quality.
+            Our pricing is based on the amount of material the object requires to be made. The larger the object, the more material is used, and the longer it takes to print. Color does NOT affect
+            the price of the print, only the amount of material used. All prints are made using PLA+ material, which is a strong and durable material that is perfect for almost all prints.
         </p>
+        <p>
+            All objects on makerworld.com should list the amount of material used to make them. If you are unsure of how much material your print will require, please contact us directly at <a href="mailto:CaptGrizzlyPrinting@gmail.com" style="color: #fff;">CaptGrizzlyPrinting@gmail.com</a>.
         <p>
             Pricing Details:
             <ul>
                 <li>
-                    Base price: <strong>$2.99</strong> for every order up to <strong>50 grams</strong> of filament.
+                    Base price: <strong>$2.99</strong> for every order and up to <strong>50 grams</strong> of filament.
                 </li>
                 <li>
-                    For orders over <strong>50 grams</strong>, an additional <strong>$0.05</strong> is added per gram beyond 50 grams.
+                    For orders over <strong>50 grams</strong>, an additional <strong>$0.05</strong> is added per gram above 50 grams on top of the base price.
                 </li>
                 <li>
-                    If you request higher build quality, the final price is multiplied by <strong>1.5x</strong>.
+                    <strong>Shipping is NOT included in this price</strong>. If shipping is necessary, it will be handled at the time of order confirmation (generic estimate of $10-$20)
                 </li>
             </ul>
         </p>
+    </div>
+    <div class="PriceCalculator">
+        <h2>Price Estimator</h2>
+        <form id="priceCalculatorForm">
+            <label for="filamentGrams">Total Grams of Filament Used:</label><br>
+            <input type="number" id="filamentGrams" name="filamentGrams" placeholder="Enter weight in grams" required><br><br>
+    
+            <label for="shipping">Shipping Required?</label>
+            <input type="checkbox" id="shipping" name="shipping"><br><br>
+    
+            <button type="button" onclick="calculatePrice()">Calculate Price</button>
+        </form>
+        <p id="calculatedPrice">Total Price: $0.00</p>
         <p>
-            For a more accurate price, please contact us directly at CaptGrizzlyPrinting@gmail.com.
+            For a more accurate price, please contact us directly at <a href="mailto:CaptGrizzlyPrinting@gmail.com" style="color: #fff;">CaptGrizzlyPrinting@gmail.com</a>.
         </p>
     </div>
+</div>
+
+<div class="OrderDirect">
+    <button class="OrderButton" onclick="window.location.href='orderPage.html'">Create Order</button>
 </div>
 
     <!-- Footer -->

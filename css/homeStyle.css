@@ -150,7 +150,34 @@ body, html {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
+.OrderDirect {
+    background-color: #191919; /* Match the dark background */
+    padding: 40px 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Smooth rounded corners */
+    color: white; /* White text for readability */
+    text-align: center; /* Center-align all content */
+    margin: 20px auto; /* Add spacing and center the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
 
+.OrderButton {
+    padding: 15px 30px; /* Add some padding for a larger button */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Text color */
+    background: linear-gradient(45deg, #007BFF, #0056b3); /* Gradient background */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a 3D effect */
+}
+
+.OrderButton:hover {
+    background: linear-gradient(45deg, #0056b3, #003f8a); /* Darker gradient */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+}
 
 .desktop-text {
     display: inline;
