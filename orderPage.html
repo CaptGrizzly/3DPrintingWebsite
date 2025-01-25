@@ -85,11 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        import { Timestamp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
           apiKey: "AIzaSyDhyI4uoZaJri8BDHmqLLAJb8HoH67TrPA",
           authDomain: "capt-grizzly-printing.firebaseapp.com",
@@ -111,14 +112,22 @@ if (websiteForm) {
     websiteForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        function sanitize(input) {
+            const div = document.createElement('div');
+            div.innerText = input;
+            return div.innerHTML;
+        }
+
         const formData = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            websiteLink: e.target.websiteLink.value,
-            color: e.target.color.value,
-            notes: e.target.notes.value,
-            timestamp: new Date().toISOString()
+            name: sanitize(e.target.name.value),
+            email: sanitize(e.target.email.value),
+            websiteLink: sanitize(e.target.websiteLink.value),
+            color: sanitize(e.target.color.value),
+            notes: sanitize(e.target.notes.value || ''),
+            timestamp: Timestamp.fromDate(new Date()) // Correct Timestamp usage
         };
+
+        console.log("Submitting form data:", formData);
 
         try {
             const docRef = await addDoc(collection(db, 'websiteOrders'), formData);
