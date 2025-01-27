@@ -45,8 +45,15 @@
     // Login form submission handler
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+
+        function sanitize(input) {
+            const div = document.createElement('div');
+            div.innerText = input;
+            return div.innerHTML;
+        }
+
+        const email = sanitize(document.getElementById("email").value);
+        const password = sanitize(document.getElementById("password").value);
 
         try {
             // Sign in user
@@ -56,7 +63,7 @@
             // Check for authorized admin email
             if (user.email === "captgrizzlyprinting@gmail.com") {
                 alert("Welcome, Admin!");
-                window.location.href = "/admin/orderAdminMain.html";
+                window.location.href = "/admin/orderadminmain.html";
             } else {
                 throw new Error("Unauthorized access! This area is restricted.");
             }
