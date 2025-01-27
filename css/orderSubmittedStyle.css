@@ -14,3 +14,24 @@ header {
     text-align: center;
     color: white;
 }
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.AboutSection button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF; /* MakerWorld color theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.AboutSection button:hover {
+    background-color: #0056b3; /* Darken the color on hover */
+}

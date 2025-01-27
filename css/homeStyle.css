@@ -130,9 +130,32 @@ body, html {
 .PricingSection ul li strong {
     color: white; /* Highlight key details */
 }
+.PricingSection input[type="number"] {
+    padding: 10px; /* Add padding for input fields */
+    margin: 10px 0; /* Space between fields */
+    width: 100%; /* Full width */
+    max-width: 200px; /* Limit width for better readability */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Match text size */
+    color: #333; /* Dark text color */
+}
 
-/* Button for Call-to-Action (Optional) */
-.PricingSection .cta-button {
+.PricingSection label {
+    font-size: 1.2rem; /* Match text size */
+    margin-bottom: 10px; /* Space below labels */
+    color: #fff; /* White text */
+    
+}
+
+.PricingSection input[type="checkbox"] {
+    margin: 10px 0; /* Space between fields */
+    width: 20px; /* Adjust width */
+    height: 20px; /* Adjust height */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.PricingSection button {
     display: inline-block;
     background-color: navy; /* Accent button color */
     color: white; /* Text color */
@@ -145,10 +168,14 @@ body, html {
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
 }
 
-.PricingSection .cta-button:hover {
+.PricingSection button:hover {
     background-color: #003f8a; /* Darker shade on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
+
+
+
+
 
 .OrderDirect {
     background-color: #191919; /* Match the dark background */

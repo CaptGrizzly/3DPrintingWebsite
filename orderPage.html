@@ -6,17 +6,10 @@
     <title>Place an Order</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/orderStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJN8PYNP18"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HJN8PYNP18');
-</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="desktop-text">&#8592; CANCEL AND RETURN HOME</span>
                 <span class="mobile-text">CANCEL</span>
             </a>
-            <h1 class="HeaderTitle">Capt Grizzly Printing</h1>
+            <h1 class="HeaderTitle" style="font-family: Bona Nova SC; font-size: clamp(1.5em, 3em, 5em);">Capt Grizzly Printing</h1>
         </div>
     </header> 
 
@@ -94,23 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-        import { Timestamp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-
+        import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
         const firebaseConfig = {
-          apiKey: "AIzaSyDhyI4uoZaJri8BDHmqLLAJb8HoH67TrPA",
-          authDomain: "capt-grizzly-printing.firebaseapp.com",
-          databaseURL: "https://capt-grizzly-printing-default-rtdb.firebaseio.com",
-          projectId: "capt-grizzly-printing",
-          storageBucket: "capt-grizzly-printing.firebasestorage.app",
-          messagingSenderId: "363408723474",
-          appId: "1:363408723474:web:d002eb944dff7ea6ad92cb",
-          measurementId: "G-5QBL1V39YT"
-        };
+            apiKey: "AIzaSyDhyI4uoZaJri8BDHmqLLAJb8HoH67TrPA",
+            authDomain: "capt-grizzly-printing.firebaseapp.com",
+            databaseURL: "https://capt-grizzly-printing-default-rtdb.firebaseio.com",
+            projectId: "capt-grizzly-printing",
+            storageBucket: "capt-grizzly-printing.firebasestorage.app",
+            messagingSenderId: "363408723474",
+            appId: "1:363408723474:web:d002eb944dff7ea6ad92cb",
+            measurementId: "G-5QBL1V39YT"
+            };
       
         // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -142,12 +133,11 @@ if (websiteForm) {
         try {
             const docRef = await addDoc(collection(db, 'websiteOrders'), formData);
             console.log("Document written with ID:", docRef.id);
-            alert('Website order submitted successfully!');
             websiteForm.reset();
-            window.location.href = 'orderSubmitted.html';
+            window.location.href = `orderSubmitted.html?orderId=${docRef.id}`;
         } catch (error) {
             console.error('Error submitting website order:', error);
-            alert('An error occurred. Please try again.');
+            alert('An error occurred. Please try again or contact us directly at CaptGrizzlyPrinting@gmail.com');
         }
     });
 } else {

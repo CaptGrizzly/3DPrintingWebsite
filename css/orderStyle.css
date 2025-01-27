@@ -13,14 +13,15 @@ body {
 .Header {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Vertically align items */
-    justify-content: space-around; /* Push elements to the sides */
-    padding: 10px 20px; /* Add some padding around the header */
-    background-color: #333; /* Optional: Matches the navigation bar color scheme */
+    align-items: center;
+    justify-content: space-between; /* Better spacing for elements */
+    padding: 5px 10px; /* Reduced padding for a thinner bar */
+    background-color: #333;
     color: white;
-    position: sticky; /* Ensures it stays at the top of the page */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
+    height: auto; /* Ensure it adapts to the content height */
 }
 
 .HeaderRow {
@@ -28,6 +29,7 @@ body {
     align-items: center; /* Vertically center align items */
     width: 100%;
 }
+
 
 .BackButton {
     text-decoration: none;
@@ -61,13 +63,31 @@ body {
 }
 
 .HeaderTitle {
-    flex-grow: .5; /* Push the title to take up available space */
+    flex-grow: 0.5;
     align-self: center;
-    font-size: clamp(2rem, 5vw, 4rem); /* Responsive and large font size */
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Match Home Page's title size */
     font-weight: bold;
-    text-align: center; /* Center-align the title within its space */
+    text-align: center;
     margin: 0;
 }
+
+.bona-nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .bona-nova-sc-bold {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .bona-nova-sc-regular-italic {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
 
 /*                        */
 /* Main Content Container */

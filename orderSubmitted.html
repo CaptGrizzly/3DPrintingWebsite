@@ -32,13 +32,13 @@
         <h1>Thank You!</h1>
     </header>
 
-    <!-- Main Content Section -->
     <section class="AboutSection">
         <div class="SectionContent">
             <h1>Order Submitted Successfully</h1>
             <p>
                 Thank you for submitting your order! Our team has received your details and will reach out to you shortly regarding pricing and further steps.
             </p>
+            <!-- Order ID will be dynamically inserted here -->
             <p>
                 If you have any immediate questions or need assistance, feel free to contact us directly at <a href="mailto:CaptGrizzlyPrinting@gmail.com" style="color: #fff;">CaptGrizzlyPrinting@gmail.com</a>.
             </p>
@@ -47,5 +47,32 @@
             </a>
         </div>
     </section>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        // Get the order ID from the URL
+        const orderId = getQueryParam('orderId');
+    
+        // Display the order ID in the desired location
+        if (orderId) {
+            const sectionContent = document.querySelector('.SectionContent');
+    
+            // Create a new paragraph element for the order ID
+            const orderIdParagraph = document.createElement('p');
+            orderIdParagraph.textContent = `Your Order ID is: ${orderId}`;
+            orderIdParagraph.style.color = '#fff'; // Optional: Add custom styling
+            orderIdParagraph.style.fontWeight = 'bold';
+            orderIdParagraph.style.fontSize = '1.2em';
+    
+            // Insert the paragraph after the heading
+            const heading = sectionContent.querySelector('h1');
+            heading.insertAdjacentElement('afterend', orderIdParagraph);
+        }
+    </script>
 </body>
 </html>
