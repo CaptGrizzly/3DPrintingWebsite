@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label for="colorWhite">White</label><br><br>
                     <input type="radio" id="colorBlue" name="color" value="Blue">
                     <label for="colorBlue">Blue</label><br><br>
+                    <input type="radio" id="colorRed" name="color" value="Red">
+                    <label for="colorRed">Red</label><br><br>
         
                     <label for="notes">Special Notes:</label><br>
                     <textarea placeholder="Please write any specific requests or comments" id="notes" name="notes" rows="3"></textarea><br><br>
@@ -125,7 +127,10 @@ if (websiteForm) {
             websiteLink: sanitize(e.target.websiteLink.value),
             color: sanitize(e.target.color.value),
             notes: sanitize(e.target.notes.value || ''),
-            timestamp: Timestamp.fromDate(new Date()) // Correct Timestamp usage
+            timestamp: Timestamp.fromDate(new Date()),
+            isPayedFor: false,
+            isActive: false,
+            isCompleted: false
         };
 
         console.log("Submitting form data:", formData);

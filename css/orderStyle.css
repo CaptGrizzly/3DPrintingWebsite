@@ -205,10 +205,12 @@ label {
 }
 #colorWhite {
     background-color: white;
-    border-color: #ccc; /* Adjust border for visibility */
 }
 #colorBlue {
     background-color: blue;
+}
+#colorRed {
+    background-color: red;
 }
 
 /* Individual colors for radio buttons when selected */
@@ -227,6 +229,10 @@ input[type="radio"]:checked#colorWhite {
 input[type="radio"]:checked#colorBlue {
     background-color: blue;
     border-color: blue;
+    border-width: 20px;}
+input[type="radio"]:checked#colorRed {
+    background-color: red;
+    border-color: red;
     border-width: 20px;}
 
 
