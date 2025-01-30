@@ -11,7 +11,7 @@ window.calculatePrice = function() {
     // Base price calculation
     let basePrice = 2.99;
     if (filamentGrams > 50) {
-        basePrice += (filamentGrams - 50) * 0.05;
+        basePrice += (filamentGrams - 50) * 0.1;
     }
 
     // Shipping adjustment
