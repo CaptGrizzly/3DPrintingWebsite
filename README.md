@@ -40,5 +40,3 @@
 ---
 
 Thank you for supporting a small business passionate about making **3D printing** accessible to everyone!
-
-Thank you for supporting a small business passionate about making 3D printing accessible to everyone!
